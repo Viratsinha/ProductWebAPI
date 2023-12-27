@@ -49,7 +49,7 @@ namespace ProductInformation.Controllers
         [HttpPost]      // ADDING NEW PRODUCTS
         public IActionResult AddProduct([FromBody] Product product) {
         
-                var addProducts = _productRepository.AddProduct(product);
+             var addProducts = _productRepository.AddProduct(product);
             /* here we are using created at action to return http 201 created
              response with a location header pointing to the newly created resource */
 

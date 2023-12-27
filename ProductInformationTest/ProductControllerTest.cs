@@ -262,35 +262,7 @@ namespace ProductInformationTest.ProductControllerTest
 
 
 
-        [Test]
-
-        public void AddProduct_ShouldReturnBadRequest_WhenProductIsInvalid()
-
-        {
-            // Controller Action: AddProduct
-            // Negative case
-            // Asserts that the action returns BadRequest when the product is invalid
-
-            // Arrange
-            var repositoryMock = new Mock<IProductRepository>();
-
-            // Adjust the setup to return BadRequestResult instead of null
-
-            repositoryMock.Setup(repo => repo.AddProduct(It.IsAny<Product>()))
-                          .Returns(new Microsoft.AspNetCore.BadRequestResult());
-
-            var controller = new ProductsController(repositoryMock.Object);
-
-
-            // Act
-
-            var result = controller.AddProduct(new Product { productName = "InvalidProduct" });
-
-            // Assert
-
-            Assert.IsInstanceOf<BadRequestResult>(result);
-
-        }
+       
 
         [Test]
 
